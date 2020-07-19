@@ -7,7 +7,7 @@ function feetToMile(feet){
     }
     else{
         var mile = 0.000189394*feet;   //1 feet= 0.000189394 mile
-        return mile;    
+        return mile.toFixed(10);    
     }
 }
 
@@ -25,6 +25,8 @@ function woodCalculator(chair, table, bed){
         return numberOfWood;
     }
 }
+
+
 
 //brickCalculator
 function brickCalculator(floor){
@@ -66,5 +68,5 @@ function tinyFriend(array){
             indexNumber = i;
         }
     }
-    return console.log("Friend no.", indexNumber+1, " has the smallest name");
+    return console.log(array[indexNumber],"is the smallest name");
 }
