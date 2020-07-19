@@ -60,10 +60,20 @@ function brickCalculator(floor){
 
 //tinyFriend
 function tinyFriend(array){
-    var min = array[0].length;
-    var indexNumber = 0;
-    for (var i=1; i<array.length; i++){
-        if (array[i].length<min){
+    var min;
+    for (var i=0; i<array.length; i++){
+        if (array[i] != ''){            /* if the first element of the array isn't empty, then min is set to length of that index. else min is set to the length of the next index which isn't empty*/
+            var min = array[i].length;
+            break; // after min is found, loop is broken (help taken from google)
+        }
+    }
+    if (i == array.length){
+        return console.log("This is an empty array");
+    }
+    
+    var indexNumber;
+    for (i=1; i<array.length; i++){
+        if (array[i].length<min && array[i] != ''){
             min = array[i].length;
             indexNumber = i;
         }
